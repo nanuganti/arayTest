@@ -11,10 +11,6 @@ const getCommonElements = (firstArray, secondArray) => {
     return intersectionArray;
 }
 
-console.log(getCommonElements(["a", "b", "c"], ["b", "c"]));
-console.log(getCommonElements(["abc", "bc", "c"], ["bc", "c"]));
-
-
 const matchingScore = (firstWord, secondWord) => {
     const count = firstWord.length;
     const matchedArray = getCommonElements(firstWord, secondWord);
@@ -24,16 +20,10 @@ const matchingScore = (firstWord, secondWord) => {
     } else if (matchedArray.length === 0) {
         return 0;
     } else {
-        //3 
-        let matchPercentage = matchedArray / count;
+        let matchPercentage = matchedArray.length / count;
         return matchPercentage;
-        //calculate the percentage 
     }
 
 }
 
-console.log(matchingScore("abc", "abc"));
-console.log(matchingScore("abc", "xyz"));
-console.log(matchingScore("abc", "abz"));
-
-export default matchingScore;
+module.exports = matchingScore;
