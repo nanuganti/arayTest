@@ -7,7 +7,7 @@ app.use("/", (req, res) => {
     const { firstWord, secondWord } = req.query;
     let service = new WordMatching(firstWord, secondWord);
     const response = service.getMatchingScore();
-    res.send(`returning scrore is ${response} `, 200);
+    res.status(200).send(`returning scrore is ${response} `);
 })
 
 app.listen(port, () => {
